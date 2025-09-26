@@ -14,9 +14,7 @@ console.log(jsResult);
 // -------------------------
 // 2. Prettier join
 // -------------------------
-const doc = group(
-    join(concat([',', line]), arr)
-);
+const doc = group(join(concat([',', line]), arr));
 console.log('=== Prettier join (printWidth=6) ===');
 ps(doc, 6);
 

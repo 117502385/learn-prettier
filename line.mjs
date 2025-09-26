@@ -1,3 +1,4 @@
+import {ps} from './ps.mjs';
 import prettier from 'prettier';
 
 const {concat, group, line, softline, hardline} = prettier.doc.builders;
@@ -8,12 +9,9 @@ function demo(label, width) {
 
     let doc = concat(['A', separator, 'B']);
     doc = group(doc); // 只有加上本行才能看出区别
-    const result = prettier.doc.printer.printDocToString(doc, {
-        printWidth: width,
-    });
 
     console.log(`=== ${label}, width=${width} ===`);
-    console.log(result.formatted);
+    ps(doc, width);
 }
 
 demo('line', 80);
